@@ -1,0 +1,9 @@
+.logo {
+  @include hover(scale, 1.1);
+
+  &-link {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+  }
+}

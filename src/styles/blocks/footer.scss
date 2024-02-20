@@ -1,0 +1,132 @@
+.footer {
+  width: 100%;
+  background-color: $footer-background-color;
+  border-top-right-radius: 200px;
+
+  &__content {
+    @include pageGrid;
+    padding-bottom: 34px;
+  }
+
+  &__top {
+    position: relative;
+    grid-column: 1 / 4;
+    padding-top: 91px;
+    padding-bottom: 52px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 1px;
+      opacity: 40%;
+      background-color: #fff;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 38px;
+      margin-left: 15px;
+      text-wrap: wrap;
+      font-size: 36px;
+      color: #fff;
+    }
+
+    &-text {
+      margin: 0;
+      margin-bottom: 50px;
+      margin-left: 15px;
+      color: #fff;
+    }
+
+    &-button {
+      margin-left: 15px;
+      width: 150px;
+      height: 56px;
+      color: #fff;
+      background-color: $default-button-color;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+
+      @include hover(background-color, $hover-button-color);
+
+      &:active {
+        background-color: $active-button-color;
+      }
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / 4;
+    @include contentPaddingInline;
+    color: #fff;
+  }
+
+  &__logo {
+    margin-top: 47px;
+    margin-bottom: 32px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    list-style: none;
+    margin-bottom: 52px;
+
+    &-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    list-style: none;
+    margin-bottom: 52px;
+
+    &-link {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &-title {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__follow {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    list-style: none;
+    margin-bottom: 44px;
+
+    &-link {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &-title {
+      margin-bottom: 32px;
+    }
+  }
+}

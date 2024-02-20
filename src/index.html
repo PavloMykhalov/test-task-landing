@@ -1,13 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miami</title>
-    <link rel="stylesheet" href="./styles/main.scss">
-    <script src="scripts/main.js" defer></script>
-  </head>
-  <body>
-    <h1>Landing Page</h1>
-  </body>
+<html lang="en" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test task</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="icon" href="./images/logo-icon.svg">
+  <script src="scripts/main.js" defer></script>
+</head>
+
+<body class="page__body">
+  <header class="header">
+    <div class="header__content">
+      <div class="header__top">
+        <a class="logo-link">
+          <img src="./images/logo-icon.svg" alt="Landing logo" class="logo" />
+        </a>
+
+        <a href="#" class="icon icon--menu"></a>
+      </div>
+      <div class="header__bottom">
+        <h1 class="header__title">
+          Hello world! My name is Ira
+        </h1>
+        <p class="header__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus tristique vulputate ultrices ut mauris
+          tellus at. Posuere sollicitudin odio tellus elit.
+        </p>
+
+        <button class="header__button">
+          See Our Project
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__content">
+      <h2 class="main__title">
+        What we do to help our client grow in digital era?
+      </h2>
+
+      <article class="main__article main__article--first">
+        <img src="../src/images/image-article-1.png" alt="Brint Tecnhology To Your" class="main__article-image">
+        <h3 class="main__article-title">
+          Bring Tecnhology to Your
+        </h3>
+
+        <p class="main__article-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+
+        <a href="#" class="main__article-link">
+          Learn more
+        </a>
+      </article>
+
+      <article class="main__article main__article--second">
+        <img src="../src/images/image-aricle-2.png" alt="Make your business to be better" class="main__article-image">
+        <h3 class="main__article-title">
+          Make Your business To Be Better Famous
+        </h3>
+
+        <p class="main__article-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+
+        <a href="#" class="main__article-link">
+          Learn more
+        </a>
+      </article>
+
+      <article class="main__article main__article--third">
+        <img src="../src/images/image-article-3.png" alt="Build your digital product taht suitable"
+          class="main__article-image">
+        <h3 class="main__article-title">
+          Build Your Digital Product That Suitable
+        </h3>
+
+        <p class="main__article-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+
+        <a href="#" class="main__article-link">
+          Learn more
+        </a>
+      </article>
+
+      <form class="main__form" action="#" method="get" onsubmit="this.reset(); return false">
+        <h3 class="main__form-title">
+          Registration
+        </h3>
+
+        <label class="main__form-label">
+          <p class="main__form-label--title">Name</p>
+          <input type="text" placeholder="Your name" class="main__form-input" required name="name">
+        </label>
+
+        <label class="main__form-label">
+          <p class="main__form-label--title">Surname</p>
+          <input type="text" placeholder="Your surname" class="main__form-input" required name="surname">
+        </label>
+
+        <label class="main__form-label">
+          <p class="main__form-label--title">Phone number</p>
+          <input type="tel" placeholder="+ 3 8 _ _ _  _ _ _  _ _  _ _" class="main__form-input" required
+            pattern="\+?[0-9]{12}" name="phone">
+          <span class="main__form-label--info">
+            *Use only numbers
+          </span>
+        </label>
+
+        <label class="main__form-label">
+          <p class="main__form-label--title">Email</p>
+          <input type="email" placeholder="email@email.com" class="main__form-input" name="email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+          <span class="main__form-label--info">
+            *Use only latin letters and characters ._-@
+          </span>
+        </label>
+
+        <label class="main__form-checkbox">
+          <input type="checkbox" checked required>
+          <p>I agree with The Terms of Use and with The Privacy Policy</p>
+        </label>
+
+        <button class="main__form-button" type="submit">
+          Register me!
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__content">
+      <section class="footer__top">
+        <h2 class="footer__top-title">
+          Interested to work with our team?
+        </h2>
+        <p class="footer__top-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.
+        </p>
+        <button class="footer__top-button">
+          Let`s Talk
+        </button>
+      </section>
+
+      <section class="footer__bottom">
+        <a class="logo-link" href="#">
+          <img src="./images/icon-footer-logo.svg" alt="Landing logo" class="footer__logo logo" />
+        </a>
+
+        <ul class="footer__contacts">
+          <li class="footer__contacts-item">
+            <p>A.</p>
+            <p class="footer__contact-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </li>
+
+          <li class="footer__contacts-item">
+            <p>T.</p>
+            <a href="tel:+380912345678" class="footer__contacts-link">
+              +38 091 234 56 78
+            </a>
+          </li>
+
+          <li class="footer__contacts-item">
+            <p>E.</p>
+            <a href="mailto:hello.ira@gmail.com" class="footer__contacts-link">
+              hello.ira@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer__about">
+          <h3 class="footer__about-title">
+            About Us
+          </h3>
+          <li class="footer__about-item">
+            <a href="#" class="footer__about-link">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer__about-link">
+              What We Do
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer__about-link">
+              Project
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer__about-link">
+              How It Work With Us
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer__follow">
+          <h3 class="footer__about-title">
+            Follow
+          </h3>
+          <li class="footer__about-item">
+            <a href="https://www.instagram.com/" class="footer__about-link">
+              Instagram
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/" class="footer__about-link">
+              Facebook
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/" class="footer__about-link">
+              LinkedIn
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.youtube.com/" class="footer__about-link">
+              Youtube
+            </a>
+          </li>
+        </ul>
+
+        <p class="footer__rights">
+          2019 © All rights reserved.
+        </p>
+      </section>
+    </div>
+  </footer>
+</body>
+
 </html>

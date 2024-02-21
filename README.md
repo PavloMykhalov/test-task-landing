@@ -1,1 +1,1 @@
-- [DEMO LINK](https://PavloMyhkalov.github.io/test-task-landing/)
+- [DEMO LINK](https://pavlomykhalov.github.io/test-task-landing/)

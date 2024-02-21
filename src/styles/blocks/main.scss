@@ -1,12 +1,22 @@
 .main {
+  width: 100%;
+
   &__content {
     @include pageGrid;
-    @include contentPaddingInline;
+    margin-inline: 15px;
     margin-bottom: 140px;
+
+    @include onTablet {
+      margin-inline: 40px;
+    }
+
+    @include onDesktop {
+      margin-inline: 165px;
+    }
   }
 
   &__article {
-    grid-column: 1 / 4;
+    grid-column: 1 / -1;
     min-height: 500px;
     max-height: 525px;
     min-width: 330px;
@@ -27,17 +37,18 @@
 
     @include onDesktop {
       &--first {
-        grid-column: -5 / span 4;
+        grid-column: 8 / span 4;
+        margin-top: 15px;
       }
 
       &--second {
         position: relative;
         bottom: 50%;
-        grid-column: 2 / span 3;
+        grid-column: 2 / span 4;
       }
 
       &--third {
-        grid-column: -5 / span 4;
+        grid-column: 8 / span 4;
         margin-bottom: 142px;
       }
     }
@@ -106,7 +117,7 @@
         height: 197px;
         width: 250px;
         margin: auto;
-        bottom: 50px;
+        bottom: 40px;
       }
 
       &--second {
@@ -124,13 +135,11 @@
   &__title {
     grid-column: 1 / -1;
     margin-bottom: 64px;
-    height: fit-content;
 
     font-size: 36px;
     font-weight: 700;
     line-height: 50px;
     letter-spacing: 0.05em;
-    text-align: left;
     color: $footer-background-color;
 
 
@@ -145,9 +154,9 @@
   }
 
   &__form {
-    grid-column: 1 / 4;
+    grid-column: 1 / -1;
     padding: 56px 45px 43px;
-    min-width: 348px;
+    min-width: 330px;
     box-shadow: 5px 20px 50px 0px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
 
@@ -163,7 +172,7 @@
     }
 
     @include onDesktop {
-      grid-column: 3 / -1;
+      grid-column: 3 / span 8;
     }
 
     &-title {
@@ -288,7 +297,7 @@ input[type="checkbox"] {
   }
 }
 
-input[type="checkbox"]:checked + .main__form-checkbox-custom {
+input[type="checkbox"]:checked+.main__form-checkbox-custom {
   background-color: $main-color;
   background-image: url(../images/icon-checkbox.svg);
   background-repeat: no-repeat;

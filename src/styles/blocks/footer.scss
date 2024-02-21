@@ -1,4 +1,5 @@
 .footer {
+  width: 100%;
   background-color: $footer-background-color;
   border-top-right-radius: 200px;
 
@@ -7,30 +8,10 @@
   }
 
   &__top {
+    @include pageGrid;
     position: relative;
-    grid-column: 1 / 4;
     padding-top: 91px;
     padding-bottom: 52px;
-    padding-inline: 20px;
-    width: 350px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    @include onTablet {
-      padding-inline: 40px;
-      width: 100%;
-    }
-
-    @include onDesktop {
-      grid-column: 1 / span 10;
-      padding-inline: 200px;
-
-      display: grid;
-      grid-template-columns: repeat(12, 65px);
-      column-gap: 30px;
-    }
 
     &::after {
       content: '';
@@ -45,21 +26,30 @@
     }
 
     &-title {
-      margin: 0;
+      grid-column: 1 / 4;
       margin-bottom: 38px;
+      margin-left: 24px;
       text-wrap: wrap;
       font-size: 36px;
       line-height: 43.2px;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #fff;
+      margin-left: 15px;
+
+      @include onTablet {
+        grid-column: 1 / span 3;
+        margin-left: 40px;
+      }
 
       @include onDesktop {
         grid-column: 2 / span 6;
+        margin-left: 165px;
       }
     }
 
     &-text {
+      grid-column: 1 / -1;
       margin: 0;
       margin-bottom: 50px;
       font-size: 24px;
@@ -68,15 +58,24 @@
       line-height: 38.4px;
       letter-spacing: 0.06em;
       color: #fff;
+      margin-left: 15px;
+
+      @include onTablet {
+        grid-column: 1 / span 5;
+        margin-left: 40px;
+      }
 
       @include onDesktop {
-        grid-column: 2 / span 6;
+        grid-column: 2 / span 7;
+        margin-left: 165px;
       }
     }
 
     &-button {
+      grid-column: 1 / span 2;
       width: 220px;
       height: 56px;
+      margin-left: 15px;
       color: #fff;
       background-color: $default-button-color;
       border: none;
@@ -89,9 +88,14 @@
       letter-spacing: 0.08em;
       text-align: center;
 
+      @include onTablet {
+        grid-column: 1 / span 2;
+        margin-left: 40px;
+      }
 
       @include onDesktop {
-        grid-column: 8 / span 2;
+        grid-column: 10 / span 2;
+        margin-left: 0;
       }
 
       @include hover(background-color, $hover-button-color);
@@ -103,25 +107,22 @@
   }
 
   &__bottom {
-    grid-column: 1 / 4;
+    @include pageGrid;
     color: #fff;
-    padding-inline: 20px;
+    margin-inline: 15px;
 
     @include onTablet {
       grid-column: 1 / -1;
-      padding-inline: 40px;
-
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 15px;
+      margin-inline: 40px;
     }
 
     @include onDesktop {
-      padding-inline: 165px;
+      margin-inline: 165px;
     }
   }
 
   &__logo {
+    grid-column: 1 /2;
     margin-top: 47px;
     margin-bottom: 32px;
 
@@ -133,16 +134,23 @@
   }
 
   &__contacts {
+    grid-column: 1 / -1;
+
     display: flex;
     flex-direction: column;
     gap: 24px;
 
     list-style: none;
     margin-bottom: 52px;
+    margin-top: 60px;
 
     @include onTablet {
       grid-column: 1 / span 2;
       margin-top: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 4;
     }
 
     &-text {
@@ -183,6 +191,8 @@
   }
 
   &__about {
+    grid-column: 1 / -1;
+
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -192,6 +202,10 @@
 
     @include onTablet {
       grid-column: 4 / span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / span 3;
     }
 
     &-link {
@@ -218,6 +232,8 @@
   }
 
   &__follow {
+    grid-column: 1 / -1;
+
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -227,6 +243,10 @@
 
     @include onTablet {
       grid-column: -1;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / span 2;
     }
 
     &-link {
@@ -253,6 +273,8 @@
   }
 
   &__rights {
+    grid-column: 1 / -1;
+
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;

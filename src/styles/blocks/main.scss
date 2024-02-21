@@ -1,23 +1,21 @@
 .main {
-  width: 100%;
-
   &__content {
-    width: 100%;
     @include pageGrid;
-    // @include contentPaddingInline;
+    @include contentPaddingInline;
     margin-bottom: 140px;
   }
 
   &__article {
-    position: relative;
     grid-column: 1 / 4;
-    height: 525px;
+    min-height: 500px;
+    max-height: 525px;
+    min-width: 330px;
+    max-width: 348px;
     padding: 24px;
     margin-bottom: 64px;
     background-color: #fff;
     box-shadow: 5px 20px 50px 0px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
-    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -29,47 +27,65 @@
 
     @include onDesktop {
       &--first {
-        grid-column: -2 / span 4;
+        grid-column: -5 / span 4;
       }
 
       &--second {
-        grid-column: 2 / span 4;
+        position: relative;
+        bottom: 50%;
+        grid-column: 2 / span 3;
       }
 
       &--third {
-        grid-column: -2 / span 4;
+        grid-column: -5 / span 4;
+        margin-bottom: 142px;
       }
     }
-
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   z-index: -1;
-    //   width: 547.43px;
-    //   height: 463.76px;
-    //   opacity: 20%;
-    //   background-color: $ellipse-color;
-    //   border-radius: 50%;
-    //   transform: rotate(169.09deg);
-    // }
 
     &-title {
       margin: 0;
       margin-bottom: 16px;
+
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 34px;
+      letter-spacing: 0.05em;
+      text-align: left;
+      color: $main-color;
     }
 
     &-text {
       margin: 0;
       margin-bottom: 56px;
+
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 27px;
+      letter-spacing: 0.08em;
+      text-align: left;
+      opacity: 60%;
+      color: $main-color;
     }
 
     &-link {
       display: flex;
       align-items: center;
       gap: 9px;
-      text-decoration: none;
       color: $link-color;
       cursor: pointer;
+      transition: transform $transition-duration;
+
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 30px;
+      letter-spacing: 0.05em;
+      text-align: left;
+      text-decoration: none;
+
+      &:hover {
+        transform: scale(1.05)
+      }
 
       &:after {
         content: '';
@@ -80,10 +96,28 @@
     }
 
     &-image {
-      position: absolute;
-      top: -20px;
-      height: 197px;
-      width: 250px;
+      display: flex;
+      align-self: center;
+
+      margin-bottom: 43px;
+
+      &--positioned {
+        position: relative;
+        height: 197px;
+        width: 250px;
+        margin: auto;
+        bottom: 50px;
+      }
+
+      &--second {
+        width: 182px;
+        height: 132px;
+      }
+
+      &--third {
+        width: 156px;
+        height: 131px;
+      }
     }
   }
 
@@ -91,6 +125,14 @@
     grid-column: 1 / -1;
     margin-bottom: 64px;
     height: fit-content;
+
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: $footer-background-color;
+
 
     @include onTablet {
       grid-column: 2 / span 4;
@@ -103,8 +145,9 @@
   }
 
   &__form {
-    grid-column: 1 / 5;
+    grid-column: 1 / 4;
     padding: 56px 45px 43px;
+    min-width: 348px;
     box-shadow: 5px 20px 50px 0px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
 
@@ -112,13 +155,29 @@
     flex-direction: column;
     gap: 34px;
 
+    @include onTablet {
+      grid-column: 1 / -1;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include onDesktop {
-      grid-column: 3 / span 9;
+      grid-column: 3 / -1;
     }
 
     &-title {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 29px;
+      letter-spacing: 0.20em;
+      text-align: left;
       text-transform: uppercase;
       text-align: center;
+
+      @include onTablet {
+        grid-column: 1 / -1;
+      }
     }
 
     &-input {
@@ -129,6 +188,15 @@
       border-radius: 6px;
       outline: none;
       background-color: $input-background-color;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+        letter-spacing: 0.04em;
+        text-align: left;
+        color: $placeholder-color;
+      }
     }
 
     &-label {
@@ -139,17 +207,42 @@
 
       &--title {
         margin: 0;
+
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 21px;
+        letter-spacing: 0.06em;
+        text-align: left;
       }
 
       &--info {
         font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        letter-spacing: 0.06em;
+        text-align: left;
+        color: $label-info-color;
       }
     }
 
     &-checkbox {
       display: flex;
-      flex-direction: row;
-      align-items: baseline;
+      gap: 12px;
+      align-items: center;
+
+      @include onTablet {
+        grid-column: 1 / -1;
+      }
+
+      &-title {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0.06em;
+        text-align: left;
+        color: $main-color;
+      }
     }
 
     &-button {
@@ -159,6 +252,16 @@
       color: #fff;
       background-color: $default-button-color;
 
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 29px;
+      letter-spacing: 0.06em;
+
+      @include onTablet {
+        grid-column: 1 / -1;
+      }
+
       @include hover(background-color, $hover-button-color);
 
       &:active {
@@ -166,4 +269,28 @@
       }
     }
   }
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.main__form-checkbox-custom {
+  display: inline-block;
+  width: 70px;
+  height: 28px;
+  background-color: $checkbox-background-color;
+  border-radius: 6px;
+  cursor: pointer;
+
+  @include onTablet {
+    width: 28px;
+  }
+}
+
+input[type="checkbox"]:checked + .main__form-checkbox-custom {
+  background-color: $main-color;
+  background-image: url(../images/icon-checkbox.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -1,16 +1,18 @@
 .page {
+  font-family: 'SF Pro Display', sans-serif;
   scroll-behavior: smooth;
 
   &__body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    width: 100vw;
 
     @include onDesktop {
-      background-image: url(../images/desktop-background-image.png);
-      background-position: 704.38px 133px;
-      background-size:687.25px 579.31px;
+      background-image: url('../images/desktop-background-image.png');
+      background-size: 687.25px 579.31px;
+      background-position: 650.38px 100px;
       background-repeat: no-repeat;
     }
   }
 }
-

@@ -1,15 +1,18 @@
 .header {
-  width: 100%;
   background: linear-gradient(0deg, #98C3E8 8.84%, rgba(152, 195, 232, 0) 31.12%);
   background-size: cover;
 
   &__content {
-    margin-bottom: 77px;
     height: 100vh;
+    margin-bottom: 77px;
     display: flex;
     flex-direction: column;
     @include contentPaddingInline;
     padding-bottom: 69px;
+
+    @include onDesktop {
+      margin-bottom: 176px;
+    }
   }
 
   &__top {
@@ -25,27 +28,48 @@
   }
 
   &__title {
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
     margin: 0;
     margin-bottom: 55px;
+
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 62.4px;
+    letter-spacing: 0.02em;
+    color: $main-color;
     text-transform: uppercase;
 
     @include onTablet {
       grid-column: 1 / 6;
+      font-size: 64px;
+      line-height: 83.2px;
+      letter-spacing: 0.04em;
     }
 
     @include onDesktop {
-      grid-column: 1 / span 6;
+      grid-column: 1 / span 9;
     }
   }
 
   &__text {
-    grid-column: 1 / -1;
+    grid-column: 1 / 6;
     margin: 0;
     margin-bottom: 94px;
 
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28.8px;
+    color: $main-color;
+    letter-spacing: 0.04em;
+    opacity: 60%;
+    text-align: left;
+
     @include onTablet {
       grid-column: 1 / span 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 7;
     }
   }
 
@@ -59,6 +83,14 @@
     background-color: $default-button-color;
     color: #fff;
     cursor: pointer;
+
+    font-family: 'SF Pro Display';
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.08em;
+    text-align: center;
+
 
     @include onTablet {
       grid-column: 1 / 3;

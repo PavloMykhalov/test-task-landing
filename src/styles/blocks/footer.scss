@@ -1,10 +1,8 @@
 .footer {
-  width: 100%;
   background-color: $footer-background-color;
   border-top-right-radius: 200px;
 
   &__content {
-    @include pageGrid;
     padding-bottom: 34px;
   }
 
@@ -13,10 +11,26 @@
     grid-column: 1 / 4;
     padding-top: 91px;
     padding-bottom: 52px;
+    padding-inline: 20px;
+    width: 350px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include onTablet {
+      padding-inline: 40px;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 10;
+      padding-inline: 200px;
+
+      display: grid;
+      grid-template-columns: repeat(12, 65px);
+      column-gap: 30px;
+    }
 
     &::after {
       content: '';
@@ -33,28 +47,52 @@
     &-title {
       margin: 0;
       margin-bottom: 38px;
-      margin-left: 15px;
       text-wrap: wrap;
       font-size: 36px;
+      line-height: 43.2px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
       color: #fff;
+
+      @include onDesktop {
+        grid-column: 2 / span 6;
+      }
     }
 
     &-text {
       margin: 0;
       margin-bottom: 50px;
-      margin-left: 15px;
+      font-size: 24px;
+      font-weight: 400;
+      opacity: 60%;
+      line-height: 38.4px;
+      letter-spacing: 0.06em;
       color: #fff;
+
+      @include onDesktop {
+        grid-column: 2 / span 6;
+      }
     }
 
     &-button {
-      margin-left: 15px;
-      width: 150px;
+      width: 220px;
       height: 56px;
       color: #fff;
       background-color: $default-button-color;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 26px;
+      letter-spacing: 0.08em;
+      text-align: center;
+
+
+      @include onDesktop {
+        grid-column: 8 / span 2;
+      }
 
       @include hover(background-color, $hover-button-color);
 
@@ -66,13 +104,32 @@
 
   &__bottom {
     grid-column: 1 / 4;
-    @include contentPaddingInline;
     color: #fff;
+    padding-inline: 20px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      padding-inline: 40px;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 15px;
+    }
+
+    @include onDesktop {
+      padding-inline: 165px;
+    }
   }
 
   &__logo {
     margin-top: 47px;
     margin-bottom: 32px;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+
+      margin-top: 25px;
+    }
   }
 
   &__contacts {
@@ -83,14 +140,45 @@
     list-style: none;
     margin-bottom: 52px;
 
+    @include onTablet {
+      grid-column: 1 / span 2;
+      margin-top: 60px;
+    }
+
+    &-text {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 27px;
+      letter-spacing: 0.08em;
+      opacity: 60%;
+      text-align: left;
+    }
+
     &-item {
       display: flex;
       gap: 16px;
+
+      &--letter {
+        font-family: 'SF Pro Display';
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 800;
+        line-height: 26px;
+        letter-spacing: 0.05em;
+        text-align: left;
+      }
     }
 
     &-link {
       text-decoration: none;
       color: #fff;
+
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 27px;
+      letter-spacing: 0.08em;
+      opacity: 60%;
+      text-align: left;
     }
   }
 
@@ -102,13 +190,30 @@
     list-style: none;
     margin-bottom: 52px;
 
+    @include onTablet {
+      grid-column: 4 / span 3;
+    }
+
     &-link {
       text-decoration: none;
       color: #fff;
+
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 27px;
+      letter-spacing: 0.08em;
+      text-align: left;
+
     }
 
     &-title {
       margin-bottom: 32px;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 30px;
+      letter-spacing: 0.05em;
+      text-align: left;
     }
   }
 
@@ -120,13 +225,42 @@
     list-style: none;
     margin-bottom: 44px;
 
+    @include onTablet {
+      grid-column: -1;
+    }
+
     &-link {
       text-decoration: none;
       color: #fff;
+
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 30px;
+      letter-spacing: 0.05em;
+      text-align: left;
     }
 
     &-title {
       margin-bottom: 32px;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 30px;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+  }
+
+  &__rights {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    opacity: 40%;
+
+    @include onTablet {
+      grid-column: 1 / -1;
     }
   }
 }

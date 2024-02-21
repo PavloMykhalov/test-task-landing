@@ -7,7 +7,6 @@
   <title>Test task</title>
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="icon" href="./images/logo-icon.svg">
-  <script src="scripts/main.js" defer></script>
 </head>
 
 <body class="page__body">
@@ -30,7 +29,7 @@
         </p>
 
         <button class="header__button">
-          See Our Project
+          <p>See Our Project</p>
         </button>
 
       </div>
@@ -44,7 +43,10 @@
       </h2>
 
       <article class="main__article main__article--first">
-        <img src="../src/images/image-article-1.png" alt="Brint Tecnhology To Your" class="main__article-image">
+        <div class="main__article-container">
+          <img src="../src/images/image-article-1.png" alt="Brint Tecnhology To Your"
+            class="main__article-image main__article-image--positioned">
+        </div>
         <h3 class="main__article-title">
           Bring Tecnhology to Your
         </h3>
@@ -60,7 +62,8 @@
       </article>
 
       <article class="main__article main__article--second">
-        <img src="../src/images/image-aricle-2.png" alt="Make your business to be better" class="main__article-image">
+        <img src="../src/images/image-aricle-2.png" alt="Make your business to be better"
+          class="main__article-image main__article-image--second">
         <h3 class="main__article-title">
           Make Your business To Be Better Famous
         </h3>
@@ -77,7 +80,7 @@
 
       <article class="main__article main__article--third">
         <img src="../src/images/image-article-3.png" alt="Build your digital product taht suitable"
-          class="main__article-image">
+          class="main__article-image main__article-image--third">
         <h3 class="main__article-title">
           Build Your Digital Product That Suitable
         </h3>
@@ -126,8 +129,11 @@
         </label>
 
         <label class="main__form-checkbox">
-          <input type="checkbox" checked required>
-          <p>I agree with The Terms of Use and with The Privacy Policy</p>
+          <input type="checkbox" class="main__form-checkbox-input" required>
+          <span class="main__form-checkbox-custom"></span>
+          <p class="main__form-checkbox-title">
+            I agree with The Terms of Use and with The Privacy Policy
+          </p>
         </label>
 
         <button class="main__form-button" type="submit">
@@ -160,21 +166,21 @@
 
         <ul class="footer__contacts">
           <li class="footer__contacts-item">
-            <p>A.</p>
-            <p class="footer__contact-text">
+            <p class="footer__contacts-item--letter">A.</p>
+            <p class="footer__contacts-text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </p>
           </li>
 
           <li class="footer__contacts-item">
-            <p>T.</p>
+            <p class="footer__contacts-item--letter">T.</p>
             <a href="tel:+380912345678" class="footer__contacts-link">
               +38 091 234 56 78
             </a>
           </li>
 
           <li class="footer__contacts-item">
-            <p>E.</p>
+            <p class="footer__contacts-item--letter">E.</p>
             <a href="mailto:hello.ira@gmail.com" class="footer__contacts-link">
               hello.ira@gmail.com
             </a>
